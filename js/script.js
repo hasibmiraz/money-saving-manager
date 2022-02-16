@@ -25,9 +25,13 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     getValue(income) < 0 ||
     getValue(food) < 0 ||
     getValue(rent) < 0 ||
-    getValue(cloth) < 0
+    getValue(cloth) < 0 ||
+    isNaN(getValue(income)) ||
+    isNaN(getValue(food)) ||
+    isNaN(getValue(rent)) ||
+    isNaN(getValue(cloth))
   ) {
-    displayModal("Wrong input! Please insert positive number.", "flex");
+    displayModal("Wrong input! Please insert a positive number.", "flex");
     document.getElementById("total-expenses").innerText = 0;
     document.getElementById("total-balance").innerText = 0;
     return;
@@ -73,8 +77,8 @@ document.getElementById("savings-btn").addEventListener("click", function () {
     document.getElementById("saving-amount").innerText = 0;
     document.getElementById("remaining-amount").innerText = totalBalance;
   } else {
-    document.getElementById("remaining-amount").innerText = remainingAmount;
     document.getElementById("saving-amount").innerText = savingAmount;
+    document.getElementById("remaining-amount").innerText = remainingAmount;
   }
 });
 

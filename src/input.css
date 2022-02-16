@@ -8,6 +8,38 @@
   }
 
   .calculation-form {
-    @apply w-11/12 bg-form-bg text-center flex flex-col justify-center items-center rounded-xl;
+    @apply w-11/12 bg-form-bg text-center flex flex-col justify-center items-center rounded-xl px-4 py-2 mx-auto mb-3 lg:mb-0;
+  }
+
+  .input-section {
+    @apply flex max-w-sm justify-center items-center mb-2 mt-2;
+  }
+
+  .input-label {
+    @apply block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4;
+  }
+
+  .expense-input {
+    @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-form-color;
+  }
+
+  .form-btn {
+    @apply shadow bg-form-color focus:outline-none font-normal text-white py-2 px-4 rounded;
+  }
+
+  .savings-input {
+    @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full text-center py-2 px-0.5 lg:px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-form-color;
+  }
+
+  .money-amount {
+    @apply text-lg lg:text-2xl;
+  }
+
+  .modal-body {
+    @apply bg-slate-800 bg-opacity-50 justify-center items-center absolute top-0 right-0 bottom-0 left-0 hidden;
+  }
+
+  .modal-btn {
+    @apply bg-red-500 px-7 py-2 ml-2 rounded-md text-white font-semibold text-lg;
   }
 }

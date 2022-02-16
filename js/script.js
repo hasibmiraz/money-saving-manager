@@ -21,6 +21,17 @@ function displayModal(text, prop) {
 
 // Calculate Button Click Handle
 document.getElementById("calculate-btn").addEventListener("click", function () {
+  if (
+    getValue(income) < 0 ||
+    getValue(food) < 0 ||
+    getValue(rent) < 0 ||
+    getValue(cloth) < 0
+  ) {
+    displayModal("Wrong input! Please insert positive number.", "flex");
+    document.getElementById("total-expenses").innerText = 0;
+    document.getElementById("total-balance").innerText = 0;
+    return;
+  }
   const totalIncome = parseInt(getValue(income));
 
   const totalExpense =

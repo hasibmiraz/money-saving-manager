@@ -116,8 +116,8 @@
             </div>
           </div>
           <div class="mt-2">
-            <h3 class="money-amount">Total expenses: <span id="total-expenses">5000</span></h3>
-            <h3 class="money-amount">Balance: <span id="total-balance">4500</span></h3>
+            <h3 class="money-amount">Total expenses: <span id="total-expenses">0</span></h3>
+            <h3 class="money-amount">Balance: <span id="total-balance">0</span></h3>
           </div>
           <!-- Calculate Savings -->
           <div class="flex max-w-sm justify-center items-center mb-6 mt-6">
@@ -132,9 +132,8 @@
             <div class="w-3/4 mr-0.5 lg:mr-4">
               <input
                 class="savings-input"
-                id="inline-full-name"
+                id="saving-percent"
                 type="text"
-                value="20"
               />
             </div>
             <h3 class="text-2xl my-1">%</h3>
@@ -142,6 +141,7 @@
               <button
                 class="form-btn w-28"
                 type="button"
+                id="savings-btn"
               >
                 Save
               </button>
@@ -149,8 +149,8 @@
         </div>
         <!-- Saving Balance -->
         <div class="mt-2">
-          <h3 class="money-amount">Saving Amount: 2000</h3>
-          <h3 class="money-amount">Remaining Balance: 2500</h3>
+          <h3 class="money-amount">Saving Amount: <span id="saving-amount">0</span></h3>
+          <h3 class="money-amount">Remaining Balance: <span id="remaining-amount">0</span></h3>
         </div>
       </section>
     </main>
@@ -158,9 +158,9 @@
     <!-- Error Modal -->
     <div id="warning-modal" class="modal-body">
       <div class="bg-white px-16 py-14 rounded-md text-center">        
-        <h1 class="text-xl mb-4 font-bold text-slate-500">Do you Want Delete sdfadsfjasdjfsjdaf</h1>
+        <h1 id="warning-text" class="text-xl mb-4 font-bold text-slate-500"></h1>
         <!-- <button class="bg-indigo-500 px-4 py-2 rounded-md text-md text-white">Cancle</button> -->
-        <button id="hide-modal" class="modal-btn">Ok</button>
+        <button id="hide-modal-btn" class="modal-btn">Ok</button>
       </div>
     </div>
     <!-- Error Modal End -->

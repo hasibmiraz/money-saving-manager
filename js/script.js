@@ -13,6 +13,13 @@ function getValue(field) {
   }
 }
 
+// Handle Display Modal
+function displayModal(text, prop) {
+  document.getElementById("warning-text").innerText = text;
+  document.getElementById("warning-modal").style.display = prop;
+}
+
+// Calculate Button Click Handle
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const totalIncome = parseInt(getValue(income));
 
@@ -23,6 +30,46 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
   const totalBalance = totalIncome - totalExpense;
 
-  document.getElementById("total-expenses").innerText = totalExpense;
-  document.getElementById("total-balance").innerText = totalBalance;
+  if (totalIncome < totalExpense) {
+    displayModal(
+      "You don't have enough money to spend. Please earn more to spend more!",
+      "flex"
+    );
+
+    food.value = "";
+    rent.value = "";
+    cloth.value = "";
+    document.getElementById("total-expenses").innerText = 0;
+    document.getElementById("total-balance").innerText = income.value;
+  } else {
+    document.getElementById("total-expenses").innerText = totalExpense;
+    document.getElementById("total-balance").innerText = totalBalance;
+  }
 });
+
+// Calculate savings click handle
+document.getElementById("savings-btn").addEventListener("click", function () {
+  const percentValue =
+    parseInt(document.getElementById("saving-percent").value) / 100;
+  const savingAmount = parseInt(getValue(income)) * percentValue;
+
+  const totalBalance = document.getElementById("total-balance").innerText;
+
+  const remainingAmount = totalBalance - savingAmount;
+
+  if (totalBalance < savingAmount) {
+    displayModal("You don't have enough money to save.", "flex");
+    document.getElementById("saving-amount").innerText = 0;
+    document.getElementById("remaining-amount").innerText = totalBalance;
+  } else {
+    document.getElementById("remaining-amount").innerText = remainingAmount;
+    document.getElementById("saving-amount").innerText = savingAmount;
+  }
+});
+
+// Handle Hide Modal
+document
+  .getElementById("hide-modal-btn")
+  .addEventListener("click", function () {
+    displayModal("", "none");
+  });

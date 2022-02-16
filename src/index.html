@@ -37,7 +37,7 @@
             <div class="md:w-1/3">
               <label
                 class="input-label"
-                for="inline-full-name"
+                for="income-amount"
               >
                 Income:
               </label>
@@ -45,9 +45,8 @@
             <div class="md:w-2/3">
               <input
                 class="expense-input"
-                id="inline-full-name"
+                id="income-amount"
                 type="text"
-                value="10000"
               />
             </div>
           </div>
@@ -58,7 +57,7 @@
             <div class="md:w-1/3">
               <label
                 class="input-label"
-                for="inline-full-name"
+                for="food-amount"
               >
                 Food:
               </label>
@@ -66,9 +65,8 @@
             <div class="md:w-2/3">
               <input
                 class="expense-input"
-                id="inline-full-name"
+                id="food-amount"
                 type="text"
-                value="3000"
               />
             </div>
           </div>
@@ -76,7 +74,7 @@
             <div class="md:w-1/3">
               <label
                 class="input-label"
-                for="inline-full-name"
+                for="rent-amount"
               >
                 Rent:
               </label>
@@ -84,9 +82,8 @@
             <div class="md:w-2/3">
               <input
                 class="expense-input"
-                id="inline-full-name"
+                id="rent-amount"
                 type="text"
-                value="2000"
               />
             </div>
           </div>
@@ -94,7 +91,7 @@
             <div class="md:w-1/3">
               <label
                 class="input-label"
-                for="inline-full-name"
+                for="cloth-amount"
               >
                 Cloth:
               </label>
@@ -102,9 +99,8 @@
             <div class="md:w-2/3">
               <input
                 class="expense-input"
-                id="inline-full-name"
+                id="cloth-amount"
                 type="text"
-                value="500"
               />
             </div>
           </div>
@@ -120,8 +116,8 @@
             </div>
           </div>
           <div class="mt-2">
-            <h3 class="money-amount">Total expenses: 5000</h3>
-            <h3 class="money-amount">Balance: 4500</h3>
+            <h3 class="money-amount">Total expenses: <span id="total-expenses">5000</span></h3>
+            <h3 class="money-amount">Balance: <span id="total-balance">4500</span></h3>
           </div>
           <!-- Calculate Savings -->
           <div class="flex max-w-sm justify-center items-center mb-6 mt-6">

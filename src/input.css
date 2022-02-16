@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .title {
+    @apply text-title-color text-center text-5xl font-medium mt-12;
+  }
+
+  .calculation-form {
+    @apply w-11/12 bg-form-bg text-center flex flex-col justify-center items-center rounded-xl;
+  }
+}

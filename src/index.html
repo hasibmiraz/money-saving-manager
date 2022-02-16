@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Saving Manager</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="../dist/output.css" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body class="bg-main-bg">
     <!-- Header Title -->
     <header>
-      <h1 class="text-title-color text-center text-5xl font-medium mt-12">
+      <h1 class="title">
         Money Saving Manager
       </h1>
     </header>
@@ -20,13 +23,13 @@
     <main class="w-3/4 mx-auto mt-8">
       <section class="grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
         <!-- Money Picture -->
-        <div class="w-11/12 mx-auto">
+        <div class="w-11/12 mx-auto flex items-center">
           <img class="rounded-2xl" src="../images/money-picture.jpg" alt="" />
         </div>
 
         <!-- Form -->
         <div
-          class="w-11/12 bg-form-bg text-center flex flex-col justify-center items-center rounded-xl"
+          class="w-11/12 bg-form-bg text-center flex flex-col justify-center items-center rounded-xl px-4 py-2 mx-auto mb-3 lg:mb-0"
         >
           <!-- Income Section -->
           <h3 class="text-3xl mt-4 font-bold">Income</h3>
@@ -110,14 +113,15 @@
               <button
                 class="shadow bg-form-color w-32 focus:shadow-outline focus:outline-none font-normal text-white py-2 px-4 rounded mt-2"
                 type="button"
+                id="calculate-btn"
               >
                 Calculate
               </button>
             </div>
           </div>
           <div class="mt-2">
-            <h3 class="text-2xl">Total expenses: 5000</h3>
-            <h3 class="text-2xl">Balance: 4500</h3>
+            <h3 class="text-lg lg:text-2xl">Total expenses: 5000</h3>
+            <h3 class="text-lg lg:text-2xl">Balance: 4500</h3>
           </div>
           <!-- Calculate Savings -->
           <div class="flex max-w-sm justify-center items-center mb-6 mt-6">
@@ -129,15 +133,15 @@
                 Save:
               </label>
             </div>
-            <div class="md:w-2/3">
+            <div class="w-3/4 mr-0.5 lg:mr-4">
               <input
-                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-3/4 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-form-color"
+                class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full text-center py-2 px-0.5 lg:px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-form-color"
                 id="inline-full-name"
                 type="text"
                 value="20"
               />
             </div>
-            <h3 class="text-2xl ml-3">%</h3>
+            <h3 class="text-2xl my-1">%</h3>
             <div class="w-full">
               <button
                 class="shadow bg-form-color w-28 focus:shadow-outline focus:outline-none font-normal text-white py-2 px-4 rounded"
@@ -149,11 +153,30 @@
         </div>
         <!-- Saving Balance -->
         <div class="mt-2">
-          <h3 class="text-2xl">Saving Amount: 2000</h3>
-          <h3 class="text-2xl">Remaining Balance: 2500</h3>
+          <h3 class="text-lg lg:text-2xl">Saving Amount: 2000</h3>
+          <h3 class="text-lg lg:text-2xl">Remaining Balance: 2500</h3>
         </div>
       </section>
     </main>
     <!-- Main Section End -->
+    <!-- Error Modal -->
+    <div id="warning-modal" class="bg-slate-800 bg-opacity-50 justify-center items-center absolute top-0 right-0 bottom-0 left-0 hidden">
+      <div class="bg-white px-16 py-14 rounded-md text-center">        
+        <h1 class="text-xl mb-4 font-bold text-slate-500"><i class="fa-solid fa-circle-exclamation"></i> Do you Want Delete</h1>
+        <!-- <button class="bg-indigo-500 px-4 py-2 rounded-md text-md text-white">Cancle</button> -->
+        <button id="hide-modal" class="bg-red-500 px-7 py-2 ml-2 rounded-md text-md text-white font-semibold">Ok</button>
+      </div>
+    </div>
+    <!-- Error Modal End -->
+    <script>
+      document.getElementById('calculate-btn').addEventListener('click', function () {
+        const modal = document.getElementById('warning-modal');
+        modal.style.display = 'flex';
+      })
+      document.getElementById('hide-modal').addEventListener('click', function () {
+        const modal = document.getElementById('warning-modal');
+        modal.style.display = 'none';
+      })
+    </script>
   </body>
 </html>

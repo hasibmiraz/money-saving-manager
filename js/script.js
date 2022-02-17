@@ -3,6 +3,11 @@ const income = document.getElementById("income-amount");
 const food = document.getElementById("food-amount");
 const rent = document.getElementById("rent-amount");
 const cloth = document.getElementById("cloth-amount");
+const savingPercent = document.getElementById("saving-percent");
+const expenses = document.getElementById("total-expenses");
+const balance = document.getElementById("total-balance");
+const savingMoney = document.getElementById("saving-amount");
+const remainingMoney = document.getElementById("remaining-amount");
 
 // Input value function
 function getValue(field) {
@@ -32,62 +37,58 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     isNaN(getValue(cloth))
   ) {
     displayModal("Wrong input! Please insert a positive number.", "flex");
-    document.getElementById("total-expenses").innerText = 0;
-    document.getElementById("total-balance").innerText = 0;
-    return;
-  }
-  const totalIncome = parseInt(getValue(income));
-
-  const totalExpense =
-    parseInt(getValue(food)) +
-    parseInt(getValue(rent)) +
-    parseInt(getValue(cloth));
-
-  const totalBalance = totalIncome - totalExpense;
-
-  if (totalIncome < totalExpense) {
-    displayModal(
-      "You don't have enough money to spend. Please earn more to spend more!",
-      "flex"
-    );
-
-    food.value = "";
-    rent.value = "";
-    cloth.value = "";
-    document.getElementById("total-expenses").innerText = 0;
-    document.getElementById("total-balance").innerText = income.value;
+    expenses.innerText = 0;
+    balance.innerText = 0;
   } else {
-    document.getElementById("total-expenses").innerText = totalExpense;
-    document.getElementById("total-balance").innerText = totalBalance;
+    const totalIncome = parseInt(getValue(income));
+
+    const totalExpense =
+      parseInt(getValue(food)) +
+      parseInt(getValue(rent)) +
+      parseInt(getValue(cloth));
+
+    const totalBalance = totalIncome - totalExpense;
+
+    if (totalIncome < totalExpense) {
+      displayModal(
+        "You don't have enough money to spend. Please earn more to spend more!",
+        "flex"
+      );
+
+      food.value = "";
+      rent.value = "";
+      cloth.value = "";
+      expenses.innerText = 0;
+      balance.innerText = income.value;
+    } else {
+      expenses.innerText = totalExpense;
+      balance.innerText = totalBalance;
+    }
   }
 });
 
 // Calculate savings click handle
 document.getElementById("savings-btn").addEventListener("click", function () {
-  if (
-    getValue(document.getElementById("saving-percent")) < 0 ||
-    isNaN(getValue(document.getElementById("saving-percent")))
-  ) {
+  if (getValue(savingPercent) < 0 || isNaN(getValue(savingPercent))) {
     displayModal("Wrong input! Please insert a positive number.", "flex");
-    document.getElementById("saving-percent").value = "";
-    document.getElementById("saving-amount").innerText = 0;
-    document.getElementById("remaining-amount").innerText = 0;
+    savingPercent.value = "";
+    savingMoney.innerText = 0;
+    remainingMoney.innerText = 0;
   } else {
-    const percentValue =
-      parseInt(document.getElementById("saving-percent").value) / 100;
+    const percentValue = parseInt(savingPercent.value) / 100;
     const savingAmount = parseInt(getValue(income)) * percentValue;
 
-    const totalBalance = document.getElementById("total-balance").innerText;
+    const totalBalance = balance.innerText;
 
     const remainingAmount = totalBalance - savingAmount;
 
     if (totalBalance < savingAmount) {
       displayModal("You don't have enough money to save.", "flex");
-      document.getElementById("saving-amount").innerText = 0;
-      document.getElementById("remaining-amount").innerText = totalBalance;
+      savingMoney.innerText = 0;
+      remainingMoney.innerText = totalBalance;
     } else {
-      document.getElementById("saving-amount").innerText = savingAmount;
-      document.getElementById("remaining-amount").innerText = remainingAmount;
+      savingMoney.innerText = savingAmount;
+      remainingMoney.innerText = remainingAmount;
     }
   }
 });

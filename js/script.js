@@ -69,7 +69,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // Calculate savings click handle
 document.getElementById("savings-btn").addEventListener("click", function () {
-  if (getValue(savingPercent) < 0 || isNaN(getValue(savingPercent))) {
+  if (
+    getValue(savingPercent) < 0 ||
+    isNaN(getValue(savingPercent)) ||
+    getValue(savingPercent) == ""
+  ) {
     displayModal("Wrong input! Please insert a positive number.", "flex");
     savingPercent.value = "";
     savingMoney.innerText = 0;

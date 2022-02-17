@@ -161,12 +161,30 @@
     </main>
     <!-- Main Section End -->
     <!-- Error Modal -->
-    <div id="warning-modal" class="modal-body">
-      <div class="bg-white px-16 py-14 rounded-md text-center">        
-        <h1 id="warning-text" class="text-xl mb-4 font-bold text-slate-500"></h1>
-        <button id="hide-modal-btn" class="modal-btn">Ok</button>
+      <div class="bg-black bg-opacity-50 fixed inset-0 h-100 justify-center items-center hidden" id="warning-modal">
+        <div class="modal fade outline-none overflow-x-hidden overflow-y-auto" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-box">
+            <div class="modal-content content">
+              <div class="modal-header modal-head">
+                <h5 class="modal-title" id="exampleModalScrollableLabel">
+                  Error!
+                </h5>
+              </div>
+              <div class="modal-body relative p-4">
+                <p id="warning-text"></p>
+              </div>
+              <div
+                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                <button type="button"
+                  class="modal-btn"
+                  id="hide-modal-btn">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     <!-- Error Modal End -->
     <script src="../js/script.js"></script>
   </body>

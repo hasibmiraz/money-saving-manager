@@ -76,7 +76,7 @@ document.getElementById("savings-btn").addEventListener("click", function () {
     remainingMoney.innerText = 0;
   } else {
     const percentValue = parseInt(savingPercent.value) / 100;
-    const savingAmount = parseInt(getValue(income)) * percentValue;
+    const savingAmount = parseInt(parseInt(getValue(income)) * percentValue);
 
     const totalBalance = balance.innerText;
 

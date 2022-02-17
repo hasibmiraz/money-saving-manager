@@ -64,21 +64,31 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 // Calculate savings click handle
 document.getElementById("savings-btn").addEventListener("click", function () {
-  const percentValue =
-    parseInt(document.getElementById("saving-percent").value) / 100;
-  const savingAmount = parseInt(getValue(income)) * percentValue;
-
-  const totalBalance = document.getElementById("total-balance").innerText;
-
-  const remainingAmount = totalBalance - savingAmount;
-
-  if (totalBalance < savingAmount) {
-    displayModal("You don't have enough money to save.", "flex");
+  if (
+    getValue(document.getElementById("saving-percent")) < 0 ||
+    isNaN(getValue(document.getElementById("saving-percent")))
+  ) {
+    displayModal("Wrong input! Please insert a positive number.", "flex");
+    document.getElementById("saving-percent").value = "";
     document.getElementById("saving-amount").innerText = 0;
-    document.getElementById("remaining-amount").innerText = totalBalance;
+    document.getElementById("remaining-amount").innerText = 0;
   } else {
-    document.getElementById("saving-amount").innerText = savingAmount;
-    document.getElementById("remaining-amount").innerText = remainingAmount;
+    const percentValue =
+      parseInt(document.getElementById("saving-percent").value) / 100;
+    const savingAmount = parseInt(getValue(income)) * percentValue;
+
+    const totalBalance = document.getElementById("total-balance").innerText;
+
+    const remainingAmount = totalBalance - savingAmount;
+
+    if (totalBalance < savingAmount) {
+      displayModal("You don't have enough money to save.", "flex");
+      document.getElementById("saving-amount").innerText = 0;
+      document.getElementById("remaining-amount").innerText = totalBalance;
+    } else {
+      document.getElementById("saving-amount").innerText = savingAmount;
+      document.getElementById("remaining-amount").innerText = remainingAmount;
+    }
   }
 });
 

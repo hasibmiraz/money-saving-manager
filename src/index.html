@@ -1,155 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Money Saving Manager</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="../dist/output.css" />
-    <!-- Font awesome -->
-  </head>
-  <body class="bg-main-bg">
-    <!-- Header Title -->
-    <header>
-      <h1 class="title">
-        Money Saving Manager
-      </h1>
-    </header>
-    <!-- Header Title End -->
 
-    <!-- Main Section -->
-    <main class="w-3/4 mx-auto mt-8">
-      <section class="grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
-        <!-- Money Picture -->
-        <div class="w-11/12 mx-auto flex items-center">
-          <img class="rounded-2xl" src="../images/money-picture.jpg" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money Saving Manager</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../dist/output.css" />
+  <!-- Font awesome -->
+</head>
+
+<body class="bg-main-bg">
+  <!-- Header Title -->
+  <header>
+    <h1 class="title">
+      Money Saving Manager
+    </h1>
+  </header>
+  <!-- Header Title End -->
+
+  <!-- Main Section -->
+  <main class="w-3/4 mx-auto mt-8">
+    <section class="grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
+      <!-- Money Picture -->
+      <div class="w-11/12 mx-auto flex items-center">
+        <img class="rounded-2xl" src="../images/money-picture.jpg" alt="" />
+      </div>
+
+      <!-- Form -->
+      <div class="calculation-form">
+        <!-- Income Section -->
+        <h3 class="text-3xl mt-4 font-bold">Income</h3>
+        <div class="input-section">
+          <div class="md:w-1/3">
+            <label class="input-label" for="income-amount">
+              Income:
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input class="expense-input" placeholder="Income" id="income-amount" type="text" />
+          </div>
         </div>
-
-        <!-- Form -->
-        <div
-          class="calculation-form"
-        >
-          <!-- Income Section -->
-          <h3 class="text-3xl mt-4 font-bold">Income</h3>
-          <div class="input-section">
-            <div class="md:w-1/3">
-              <label
-                class="input-label"
-                for="income-amount"
-              >
-                Income:
-              </label>
-            </div>
-            <div class="md:w-2/3">
-              <input
-                class="expense-input"
-                placeholder="Income"
-                id="income-amount"
-                type="text"
-              />
-            </div>
+        <!-- Income Section End -->
+        <!-- Expenses Section -->
+        <h3 class="text-3xl mt-4 font-bold">Expenses</h3>
+        <div class="input-section">
+          <div class="md:w-1/3">
+            <label class="input-label" for="food-amount">
+              Food:
+            </label>
           </div>
-          <!-- Income Section End -->
-          <!-- Expenses Section -->
-          <h3 class="text-3xl mt-4 font-bold">Expenses</h3>
-          <div class="input-section">
-            <div class="md:w-1/3">
-              <label
-                class="input-label"
-                for="food-amount"
-              >
-                Food:
-              </label>
-            </div>
-            <div class="md:w-2/3">
-              <input
-                class="expense-input"
-                id="food-amount"
-                type="text"
-                placeholder="Food Expense"
-              />
-            </div>
+          <div class="md:w-2/3">
+            <input class="expense-input" id="food-amount" type="text" placeholder="Food Expense" />
           </div>
-          <div class="input-section">
-            <div class="md:w-1/3">
-              <label
-                class="input-label"
-                for="rent-amount"
-              >
-                Rent:
-              </label>
-            </div>
-            <div class="md:w-2/3">
-              <input
-                class="expense-input"
-                id="rent-amount"
-                type="text"
-                placeholder="Rent Expense"
-              />
-            </div>
+        </div>
+        <div class="input-section">
+          <div class="md:w-1/3">
+            <label class="input-label" for="rent-amount">
+              Rent:
+            </label>
           </div>
-          <div class="input-section">
-            <div class="md:w-1/3">
-              <label
-                class="input-label"
-                for="cloth-amount"
-              >
-                Cloth:
-              </label>
-            </div>
-            <div class="md:w-2/3">
-              <input
-                class="expense-input"
-                id="cloth-amount"
-                type="text"
-                placeholder="Cloth Expense"
-              />
-            </div>
+          <div class="md:w-2/3">
+            <input class="expense-input" id="rent-amount" type="text" placeholder="Rent Expense" />
           </div>
-          <div class="md:flex md:items-center">
-            <div class="w-full">
-              <button
-                class="form-btn w-32 mt-2"
-                type="button"
-                id="calculate-btn"
-              >
-                Calculate
-              </button>
-            </div>
+        </div>
+        <div class="input-section">
+          <div class="md:w-1/3">
+            <label class="input-label" for="cloth-amount">
+              Cloth:
+            </label>
           </div>
-          <div class="mt-2">
-            <h3 class="money-amount">Total expenses: <span id="total-expenses">0</span></h3>
-            <h3 class="money-amount">Balance: <span id="total-balance">0</span></h3>
-          </div>          
+          <div class="md:w-2/3">
+            <input class="expense-input" id="cloth-amount" type="text" placeholder="Cloth Expense" />
+          </div>
+        </div>
+        <div class="md:flex md:items-center">
+          <div class="w-full">
+            <button class="form-btn w-32 mt-2" type="button" id="calculate-btn">
+              Calculate
+            </button>
+          </div>
+        </div>
+        <div class="mt-2">
+          <h3 class="money-amount">Total expenses: <span id="total-expenses">0</span></h3>
+          <h3 class="money-amount">Balance: <span id="total-balance">0</span></h3>
+        </div>
         <!-- Expenses Section End -->
-          <!-- Calculate Savings -->
-          <div class="flex max-w-sm justify-center items-center mb-6 mt-6">
-            <div class="md:w-1/3">
-              <label
-                class="input-label"
-                for="inline-full-name"
-              >
-                Save:
-              </label>
-            </div>
-            <div class="w-3/4 mr-0.5 lg:mr-4">
-              <input
-                class="savings-input"
-                id="saving-percent"
-                type="text"
-              />
-            </div>
-            <h3 class="text-2xl my-1">%</h3>
-            <div class="w-full">
-              <button
-                class="form-btn w-28"
-                type="button"
-                id="savings-btn"
-              >
-                Save
-              </button>
-            </div>
+        <!-- Calculate Savings -->
+        <div class="flex max-w-sm justify-center items-center mb-6 mt-6">
+          <div class="md:w-1/3">
+            <label class="input-label" for="inline-full-name">
+              Save:
+            </label>
+          </div>
+          <div class="w-3/4 mr-0.5 lg:mr-4">
+            <input class="savings-input" id="saving-percent" type="text" />
+          </div>
+          <h3 class="text-2xl my-1">%</h3>
+          <div class="w-full">
+            <button class="form-btn w-28" type="button" id="savings-btn">
+              Save
+            </button>
+          </div>
         </div>
         <!-- Saving Balance -->
         <div class="mt-2">
@@ -157,35 +110,35 @@
           <h3 class="money-amount">Remaining Balance: <span id="remaining-amount">0</span></h3>
         </div>
         <!-- Saving Balance End -->
-      </section>
-    </main>
-    <!-- Main Section End -->
-    <!-- Error Modal -->
-      <div class="bg-black bg-opacity-50 fixed inset-0 h-100 justify-center items-center hidden" id="warning-modal">
-        <div class="modal fade outline-none overflow-x-hidden overflow-y-auto" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
-          <div class="modal-dialog modal-dialog-centered modal-dialog-box">
-            <div class="modal-content content">
-              <div class="modal-header modal-head">
-                <h5 class="modal-title" id="exampleModalScrollableLabel">
-                  Error!
-                </h5>
-              </div>
-              <div class="modal-body relative p-4">
-                <p id="warning-text"></p>
-              </div>
-              <div
-                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-                <button type="button"
-                  class="modal-btn"
-                  id="hide-modal-btn">
-                  Close
-                </button>
-              </div>
-            </div>
+    </section>
+  </main>
+  <!-- Main Section End -->
+  <!-- Error Modal -->
+  <div class="bg-black bg-opacity-50 fixed inset-0 h-100 justify-center items-center hidden" id="warning-modal">
+    <div class="modal fade outline-none overflow-x-hidden overflow-y-auto" tabindex="-1"
+      aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-box">
+        <div class="modal-content content">
+          <div class="modal-header modal-head">
+            <h5 class="modal-title" id="exampleModalScrollableLabel">
+              Error!
+            </h5>
+          </div>
+          <div class="modal-body relative p-4">
+            <p id="warning-text"></p>
+          </div>
+          <div
+            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            <button type="button" class="modal-btn" id="hide-modal-btn">
+              Close
+            </button>
           </div>
         </div>
       </div>
-    <!-- Error Modal End -->
-    <script src="../js/script.js"></script>
-  </body>
+    </div>
+  </div>
+  <!-- Error Modal End -->
+  <script src="../js/script.js"></script>
+</body>
+
 </html>
